@@ -7,11 +7,8 @@ on init
 
 on boot
 
-    insmod /lib/modules/current/dspbridge.ko
-    insmod /lib/modules/current/bridgedriver.ko
-    insmod /lib/modules/current/cmt_speech.ko
-    chmod 666 /dev/DspBridge
-    chown radio /dev/cmt_speech
+# disable proximity sensor, we don't have HAL for it currently
+    echo 1 > /sys/devices/platform/gpio-switch/proximity/disable
 
 # keyboard leds
     chown system system /sys/class/leds/lp5523\:channel1/brightness
@@ -40,6 +37,7 @@ on boot
     chmod 0660 /sys/class/graphics/fb0/blank
 
     chown radio root /dev/cmt_speech
+    chmod 666 /dev/DspBridge
 
     chown system system /data/app
     chmod 0771 /data/app
