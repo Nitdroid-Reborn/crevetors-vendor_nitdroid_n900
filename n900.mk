@@ -17,8 +17,20 @@ PRODUCT_PACKAGES += \
     SoundRecorder \
     VisualizationWallpers \
     VoiceDialer \
+	omap_twl4030keypad.kcm \
 	libRS \
-	librs_jni
+	librs_jni \
+ 	libbridge \
+	overlay.omap3 \
+	libOMX_Core \
+	libLCML \
+	libOMX.TI.AAC.encode \
+	libOMX.TI.AMR.encode \
+	libOMX.TI.WBAMR.encode \
+	libOMX.TI.Video.Decoder \
+	libOMX.TI.Video.encoder \
+	libOMX.TI.JPEG.Encoder
+	
 
 # Overrides
 PRODUCT_BRAND := nokia

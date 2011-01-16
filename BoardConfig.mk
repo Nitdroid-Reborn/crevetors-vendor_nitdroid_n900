@@ -49,9 +49,9 @@ endif
 # Wifi related defines
 BOARD_WPA_SUPPLICANT_DRIVER      := WEXT
 BOARD_WPA_SUPPLICANT_PRIVATE_LIB := 
-BOARD_WLAN_DEVICE                := wl12xx
+BOARD_WLAN_DEVICE                := wl1251
 
-WIFI_DRIVER_MODULE_PATH     := "/system/lib/modules/current/wl12xx.ko"
+WIFI_DRIVER_MODULE_PATH     := "/system/lib/modules/current/wl1251_spi.ko"
 WIFI_DRIVER_MODULE_ARG      := ""
-WIFI_DRIVER_MODULE_NAME     := "wl12xx"
-WIFI_FIRMWARE_LOADER        := "wlan_loader"
+WIFI_DRIVER_MODULE_NAME     := "wl1251_spi"
+WIFI_FIRMWARE_LOADER        := ""

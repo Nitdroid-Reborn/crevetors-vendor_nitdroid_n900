@@ -2,6 +2,7 @@ LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
 LOCAL_SRC_FILES := omap_twl4030keypad.kcm
+LOCAL_MODULE_TAGS := optional
 include $(BUILD_KEY_CHAR_MAP)
 
 file := $(TARGET_OUT_KEYLAYOUT)/omap_twl4030keypad.kl
@@ -22,6 +23,11 @@ $(file) : $(LOCAL_PATH)/gpio-keys.kl | $(ACP)
 file := $(TARGET_ROOT_OUT)/bin/busybox
 ALL_PREBUILT += $(file)
 $(file) : $(LOCAL_PATH)/busybox/busybox | $(ACP)
+	$(transform-prebuilt-to-target)
+
+file := $(TARGET_ROOT_OUT)/bin/setup-gpio.sh
+ALL_PREBUILT += $(file)
+$(file) : $(LOCAL_PATH)/setup-gpio.sh | $(ACP)
 	$(transform-prebuilt-to-target)
 
 file := $(TARGET_ROOT_OUT)/init.rc
